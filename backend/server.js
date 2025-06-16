@@ -11,6 +11,11 @@ app.use(cors({
 
 app.use(express.json());
 
+// Rota raiz para verificar se o servidor está funcionando
+app.get('/', (req, res) => {
+  res.json({ message: 'API do PetFoodCompare está funcionando!' });
+});
+
 // Simulação de dados em memória (substituir por banco de dados depois)
 let products = [
   { id: 1, name: "Royal Canin Maxi Adult", petType: "DOG", prices: [{ store: "Loja A", price: 289.90, shipping: 15.00 }] },
